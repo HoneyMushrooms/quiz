@@ -1,0 +1,42 @@
+@font-face { font-family: 'Neue Machina bold'; src: url(../fonts/NeueMachina-Bold.ttf); font-weight: 700; }
+@font-face { font-family: 'Neue Machina Ubold'; src: url(../fonts/NeueMachina-Ultrabold.ttf); font-weight: 800; }
+
+* { padding: 0; margin: 0; border: 0; }
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+:focus, :active { outline: none; }
+a:focus, a:active { outline: none; }
+nav, footer, header, aside { display: block; }
+input, button, textarea { font-family: inherit; }
+input::-ms-clear { display: none; }
+button { cursor: pointer; }
+button::-moz-focus-inner { padding: 0; border: 0; }
+a, a:visited { text-decoration: none; color: var(--black-color); }
+a:hover { text-decoration: none; }
+ul li { list-style: none; }
+img { vertical-align: top; }
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit;}
+
+:root {
+  --bg-color: rgba(249, 239, 255, 1);
+  --black-color: rgba(0, 0, 0, 1);
+  --white-color: rgba(255, 255, 255, 1);
+  --hover-color: rgba(158, 0, 255, 1);
+}
+  
+html, body {
+  width: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--black-color);
+  background-color: var(--bg-color);
+}
+
+
+  
