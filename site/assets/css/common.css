@@ -1,0 +1,35 @@
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+@media (max-width: 920px) { 
+    .container {
+        padding-inline: clamp(15px, 4%, 50px);
+    }
+
+    .popup-container {
+        padding: clamp(15px, 6%, 50px);
+    }
+}
+
+.btn {
+    color: var(--white-color) !important; 
+    background-color: var(--black-color);
+    display: inline-block;
+    text-align: center;
+    padding: 12px 32px;
+    border-radius: 16px;
+    font-size: 20px;
+    line-height: 23px;
+    transition: 0.15s ease;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+}
+
+.lock {
+    overflow: hidden;
+}
