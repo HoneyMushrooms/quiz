@@ -80,6 +80,35 @@
     background: url(../img/question_rigth.png) 0 0/cover no-repeat;
 }
 
+.emoji {
+    padding: 8px 0 96px 8px;
+}
+
+.emoji__row {
+    display: flex;
+    justify-content: center;
+}
+
+.emoji__list {
+    display: flex;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.emoji__list li {
+    flex: 0 0 auto;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: var(--white-color);   
+}
+
+.emoji__list li::first-letter {
+    text-transform: uppercase;
+}
+
+.emoji__list li span {
+    padding-right: 16px;
+}
 
 @media (max-width: 768px) { 
     .quiz_description {
