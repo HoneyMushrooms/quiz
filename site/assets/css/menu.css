@@ -256,5 +256,9 @@
         top: -15px;
         right: 29.6%;
     }
+
+    .swiper-button-next, .swiper-button-prev {
+        display: none;
+    }
 }
  
