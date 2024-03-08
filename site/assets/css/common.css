@@ -19,6 +19,25 @@
     background-color: var(--hover-color);
 }
 
+.title {
+    font-family: 'Neue Machina bold';
+}
+
+.title_size_s {
+    font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+    line-height: clamp(2.413rem, 1.448rem + 3.86vw, 4.343rem)
+}
+
+.title_size_m {
+    font-size: clamp(2.5rem, 0.75rem + 7vw, 6rem);
+    line-height: clamp(2.413rem, 0.724rem + 6.75vw, 5.79rem);
+}
+
+.text {
+    font-size: clamp(1rem, 0.875rem + 0.5vw, 1.25rem);
+    line-height: clamp(1.174rem, 1.027rem + 0.59vw, 1.468rem);
+}
+
 .lock {
     overflow: hidden;
 }
