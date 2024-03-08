@@ -103,19 +103,26 @@
     width: max-content;
 }
 
-.header__list li:hover a{
-    background-color: var(--black-color);
-    color: var(--white-color);
-}
-
-.header__link:hover, 
-.header__sublink:hover {
-    color: var(--white-color) !important;
-    background-color: var(--hover-color) !important;
-}
-
 .header__list li:hover .header__sublist{
     transform: scaleY(1);
+}
+
+@media (hover:hover) {
+    .header__list li:hover a{
+        background-color: var(--black-color);
+        color: var(--white-color);
+    }
+    
+    .header__link:hover, 
+    .header__sublink:hover {
+        color: var(--white-color) !important;
+        background-color: var(--hover-color) !important;
+    }
+}
+
+.header__link_with_sublist:hover {
+    background-color: var(--black-color);
+    color: var(--white-color);
 }
 
 .header__list li::first-letter {

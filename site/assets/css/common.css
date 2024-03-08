@@ -16,10 +16,6 @@
     transition: 0.15s ease;
 }
 
-.btn:hover {
-    background-color: var(--hover-color);
-}
-
 .title {
     font-family: 'Neue Machina bold';
 }
@@ -42,4 +38,10 @@
 .lock {
     overflow: hidden;
     height: 100vh;
+}
+
+@media (hover:hover) {
+    .btn:hover {
+        background-color: var(--hover-color);
+    }    
 }

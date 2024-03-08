@@ -62,7 +62,7 @@
 }
 
 .emoji {
-    padding: 8px 0 96px 8px;
+    padding: 8px 0 clamp(3rem, 1.5rem + 6vw, 6rem) 8px;
 }
 
 .emoji__row {
@@ -92,7 +92,7 @@
 }
 
 .feedback {
-    padding-bottom: 96px;
+    padding-bottom: clamp(3rem, 1.5rem + 6vw, 6rem);
 }
 
 .swiper {
@@ -199,17 +199,57 @@
 .swiper-button-next img {
     margin-left: 5px;
 }
-
-
-.swiper-button-next:hover, 
-.swiper-button-prev:hover {
-    background-color: var(--hover-color);
+   
+.test {
+    padding-bottom: clamp(3rem, 1.5rem + 6vw, 6rem);
 }
 
-.swiper-button-next:hover img, 
-.swiper-button-prev:hover img {
-    filter: brightness(0) invert(1);
+.test__row {
+    display: flex;
+    gap: 8px;
 }
+
+.test__history {
+    flex: 1 0 320px;
+}
+
+.test__form {
+    padding: 32px clamp(1rem, 0.5rem + 2vw, 2rem) clamp(1rem, 0.5rem + 2vw, 2rem);
+    background-color: var(--white-color);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 2.5rem + 2vw, 4rem);
+    box-shadow: 0px -20px 0px -15px rgba(233, 196, 255, 1), 0px -34px 0px -24px rgba(240, 217, 255, 1);
+    
+}
+
+.test__body {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 0.75rem + 1vw, 1.5rem);
+}
+
+.test__text {
+    max-width: 700px;
+}
+
+.test__answers {
+
+}
+
+@media (hover:hover) {
+    .swiper-button-next:hover, 
+    .swiper-button-prev:hover {
+        background-color: var(--hover-color);
+    }
+
+    .swiper-button-next:hover img, 
+    .swiper-button-prev:hover img {
+        filter: brightness(0) invert(1);
+    }   
+}
+
 
 @media (max-width: 768px) { 
     .quiz_description {
