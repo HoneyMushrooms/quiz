@@ -4,6 +4,7 @@
 }
 
 .btn {
+    width: max-content;
     color: var(--white-color) !important; 
     background-color: var(--black-color);
     display: inline-block;
@@ -40,4 +41,5 @@
 
 .lock {
     overflow: hidden;
+    height: 100vh;
 }
