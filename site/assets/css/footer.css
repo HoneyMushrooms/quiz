@@ -1,0 +1,115 @@
+.footer {
+    padding: 48px clamp(1rem, 0.615rem + 1.54vw, 2rem) clamp(1rem, 0.615rem + 1.54vw, 2rem);
+    background-color: var(--black-color);
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+}
+
+.footer__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.footer__column {
+    flex: 0 1 1043px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer__contacts {
+    display: flex;
+    justify-content: space-between;
+    color: var(--white-color);
+}
+
+.footer__contacts span {
+    font-size: clamp(0.875rem, 0.731rem + 0.58vw, 1.25rem);
+    line-height: clamp(1.028rem, 0.87rem + 0.63vw, 1.438rem);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.footer__contacts a {
+    color: var(--white-color);
+    font-family: 'Neue Machina bold';
+    font-size: clamp(1.5rem, -1.909rem + 6.45vw, 3rem);
+    line-height: clamp(1.875rem, 1.322rem + 2.21vw, 3.313rem);
+    display: inline-block;
+    border-bottom: 3px solid var(--white-color);
+}
+
+.footer__phone {
+
+}
+.footer__emal {
+}
+
+.footer__title {
+    align-self: flex-end;
+    font-family: 'Neue Machina bold';
+    font-size: 36px;
+    line-height: 35px;
+    color: var(--white-color);
+}
+
+.footer__networks {
+    display: flex;
+    gap: 8px;
+}
+
+.footer__img img {
+    max-width: 100%;
+}
+
+@media (max-width: 1300px) { 
+    .footer__row {
+        flex-direction: column-reverse;
+        gap: 48px;
+    }
+
+    .footer__column {
+        flex: 0 1 auto;
+        flex-direction: column;
+    }
+
+    .footer__contacts {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    
+    .footer__networks {
+        justify-content: space-around;
+    }
+
+    
+    .footer__title {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 1300px) { 
+
+    .footer__contacts {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .footer__column {
+        gap: 48px;
+    }
+
+    .footer__contacts span {
+        margin-bottom: 12px;
+    }
+
+    .footer__networks {
+        justify-content: space-around;
+    }
+
+    
+}
