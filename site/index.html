@@ -19,6 +19,8 @@
     <script defer src="./assets/js/burger.js"></script>
     <script defer src="./assets/js/swiper.js"></script>
     <script defer src="./assets/js/quiz.js"></script>
+    <script defer src="./assets/js/anchor.js"></script>
+    <!-- <script defer src="./assets/js/popup.js"></script> -->
     <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -32,7 +34,9 @@
             </button>
             <nav class="header__menu">
                 <ul class="header__list">
-                    <li><a class="header__link" href="#">главная</a></li>
+                    <li><a class="header__link" href="#" data-goto=".quiz_description">главная</a></li>
+                    <li><a class="header__link" href="#" data-goto=".quiz">квиз</a></li>
+                    <li><a class="header__link" href="#" data-goto=".feedback">отзывы</a></li>
                     <li><a class="header__link header__link_with_sublist" href="#">не главная</a>
                         <ul class="header__sublist">
                             <li><a class="header__sublink" href="#">подпункт</a></li>
@@ -42,8 +46,6 @@
                             <li><a class="header__sublink" href="#">и еще один подпункт</a></li>
                         </ul>
                     </li>
-                    <li><a class="header__link" href="#">квиз</a></li>
-                    <li><a class="header__link" href="#">отзывы</a></li>
                 </ul>
             </nav>
             <div class="header__contacts">
@@ -68,7 +70,7 @@
             <div class="quiz_description__colomn">
                 <h1 class="title title_size_m quiz_description__title">Это Супер-квиз!</h1>
                 <p class="text quiz_description__text">Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
-                <a class="btn quiz_description__btn" href="#">Пройти супер-квиз</a>
+                <a class="btn quiz_description__btn" href="#" data-goto=".quiz">Пройти супер-квиз</a>
             </div>
         </section>
 
@@ -107,19 +109,19 @@
                             <div class="select-box">
                                 <div class="select-box__current" tabindex="1">
                                     <div class="select-box__value">
-                                    <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked"/>
+                                    <input class="select-box__input" type="radio" id="0" value="1" name="select" checked="checked"/>
                                     <p class="select-box__input-text">Очень понравился</p>
                                     </div>
                                     <div class="select-box__value">
-                                    <input class="select-box__input" type="radio" id="1" value="2" name="Ben"/>
+                                    <input class="select-box__input" type="radio" id="1" value="2" name="select"/>
                                     <p class="select-box__input-text">Не понравился</p>
                                     </div>
                                     <div class="select-box__value">
-                                    <input class="select-box__input" type="radio" id="2" value="3" name="Ben"/>
+                                    <input class="select-box__input" type="radio" id="2" value="3" name="select"/>
                                     <p class="select-box__input-text">Пройду еще раз</p>
                                     </div>
                                     <div class="select-box__value">
-                                    <input class="select-box__input" type="radio" id="3" value="4" name="Ben"/>
+                                    <input class="select-box__input" type="radio" id="3" value="4" name="select"/>
                                     <p class="select-box__input-text">Посоветую пройти всем</p>
                                     </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
                                 </div>
@@ -151,7 +153,7 @@
             </div>
         </section>            
 
-        <section class="feedback">
+        <section class="feedback" id="feedback">
             <div class="container">
                 <div class="swiper">
                     <div class="swiper-wrapper">

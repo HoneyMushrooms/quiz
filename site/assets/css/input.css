@@ -24,6 +24,7 @@
     padding: 8px clamp(1.5rem, 1.143rem + 1.14vw, 2rem);
     border-radius: 20px;
     border: 2px solid var(--black-color);
+    transition: 0.15s ease;
 }
 
 .checkbox__btn input[type=checkbox]:checked + span {
@@ -65,10 +66,12 @@ input[type="checkbox"]:checked + span {
 
     input[type="checkbox"]:checked:hover + span .checkbox__img rect {
         fill: var(--hover-color);
+        transition: 0.15s ease;
     }
     
     input[type="checkbox"]:checked:hover + span .checkbox__img path {
         stroke: var(--white-color);
+        transition: 0.15s ease;
     }
 }
 
@@ -91,6 +94,7 @@ input[type=radio] {
     transform: translateY(-50%);
     left: 31px;
     pointer-events: none;
+    transition: 0.15s ease;
 }
 
 input[type=radio]:checked::before {
@@ -99,6 +103,8 @@ input[type=radio]:checked::before {
     height: 16px;
     background-color: var(--black-color);
     clip-path: circle(50% at 50% 50%);
+    transition: 0.15s ease;
+
 }
 
 .radio__btn span {
@@ -222,7 +228,7 @@ input[type="radio"]:checked + span {
     -webkit-animation-timing-function: step-start;
             animation-timing-function: step-start;
     background-color: var(--white-color);
-    z-index: 100
+    z-index: 30
     ;
 }
   

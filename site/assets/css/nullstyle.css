@@ -40,5 +40,11 @@ html, body {
   overflow-x: hidden;
 }
 
+body.no-scroll {
+  overflow-y: scroll; 
+  position: fixed; 
+  width: 100%; 
+  top: calc(-1 * var(--scroll-position)); 
+}
 
   

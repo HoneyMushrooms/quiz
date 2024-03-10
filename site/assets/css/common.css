@@ -44,11 +44,6 @@
     line-height: clamp(1.174rem, 1.027rem + 0.59vw, 1.468rem);
 }
 
-.lock {
-    overflow: hidden;
-    height: 100vh;
-}
-
 @media (hover:hover) {
     .btn:hover {
         background-color: var(--hover-color);

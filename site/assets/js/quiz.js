@@ -228,7 +228,7 @@ function renderHistory() {
                     });
                 } 
             } else if (this.type === 'radio') {
-                if (this.checked && this.name != 'Ben') {
+                if (this.checked && this.name != 'select') {
                     console.log(this, historyItem)
                     historyItem.querySelectorAll('span').forEach(span => {
                         span.remove();
