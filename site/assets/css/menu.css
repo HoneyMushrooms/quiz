@@ -91,7 +91,7 @@
     padding-right: 16px;
 }
 
-.feedback {
+.comments {
     padding-bottom: clamp(3rem, 1.5rem + 6vw, 6rem);
 }
 
