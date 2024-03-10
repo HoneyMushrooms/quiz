@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/menu.css">
     <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/input.css">
     <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +18,7 @@
     
     <script defer src="./assets/js/burger.js"></script>
     <script defer src="./assets/js/swiper.js"></script>
+    <script defer src="./assets/js/quiz.js"></script>
     <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -31,12 +33,10 @@
             <nav class="header__menu">
                 <ul class="header__list">
                     <li><a class="header__link" href="#">главная</a></li>
-                    <li><a class="header__link" href="#">не главная</a>
+                    <li><a class="header__link header__link_with_sublist" href="#">не главная</a>
                         <ul class="header__sublist">
                             <li><a class="header__sublink" href="#">подпункт</a></li>
                             <li><a class="header__sublink" href="#">еще подпункт</a></li>
-                            <li><a class="header__sublink" href="#">и еще один подпункт</a></li>
-                            <li><a class="header__sublink" href="#">и еще один подпункт</a></li>
                             <li><a class="header__sublink" href="#">и еще один подпункт</a></li>
                             <li><a class="header__sublink" href="#">и еще один подпункт</a></li>
                             <li><a class="header__sublink" href="#">и еще один подпункт</a></li>
@@ -85,6 +85,71 @@
                 </div>
             </div>
         </aside>
+
+        <section class="quiz">
+            <div class="container">
+                <div class="quiz__row">
+                    <div class="history">
+                        <div class="history__column">
+                        
+                        </div> 
+                    </div>
+                    
+                    <form class="form quiz__form">
+                        <div class="quiz__body">
+                            <h2 class="title title_size_s"></h2>
+                            <p class="text quiz__text"></p>
+                        </div>
+                        <div class="quiz__answers">
+
+                        </div>
+                        <div class="quiz__last-page">
+                            <div class="select-box">
+                                <div class="select-box__current" tabindex="1">
+                                    <div class="select-box__value">
+                                    <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked"/>
+                                    <p class="select-box__input-text">Очень понравился</p>
+                                    </div>
+                                    <div class="select-box__value">
+                                    <input class="select-box__input" type="radio" id="1" value="2" name="Ben"/>
+                                    <p class="select-box__input-text">Не понравился</p>
+                                    </div>
+                                    <div class="select-box__value">
+                                    <input class="select-box__input" type="radio" id="2" value="3" name="Ben"/>
+                                    <p class="select-box__input-text">Пройду еще раз</p>
+                                    </div>
+                                    <div class="select-box__value">
+                                    <input class="select-box__input" type="radio" id="3" value="4" name="Ben"/>
+                                    <p class="select-box__input-text">Посоветую пройти всем</p>
+                                    </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
+                                </div>
+                                <ul class="select-box__list">
+                                    <li>
+                                    <label class="select-box__option" for="0" aria-hidden="aria-hidden">Очень понравился</label>
+                                    </li>
+                                    <li>
+                                    <label class="select-box__option" for="1" aria-hidden="aria-hidden">Не понравился</label>
+                                    </li>
+                                    <li>
+                                    <label class="select-box__option" for="2" aria-hidden="aria-hidden">Пройду еще раз</label>
+                                    </li>
+                                    <li>
+                                    <label class="select-box__option" for="3" aria-hidden="aria-hidden">Посоветую пройти всем</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                                          
+                        <div class="quiz__btns">
+                            <button class="btn btn_color_inversion btn_border_2px quiz__btn quiz__btn_prev " href="#">Назад</button>
+                            <button class="btn quiz__btn quiz__btn_next" href="#">Продолжить</button>
+                        </div>
+                    </form>
+                </div>
+
+            
+            </div>
+        </section>            
 
         <section class="feedback">
             <div class="container">
@@ -143,12 +208,6 @@
                 
             </div>
         </section>
-
-        <div class="square">
-            <img src="./assets/img/favicon/corner_left.svg" alt="">
-            <img src="./assets/img/favicon/corner_right.svg" alt="">
-        </div>
-
     </main>
 
     <footer class="footer">

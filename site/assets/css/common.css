@@ -11,9 +11,18 @@
     text-align: center;
     padding: 12px 32px;
     border-radius: 16px;
-    font-size: 20px;
+    font-size: clamp(1rem, 0.875rem + 0.5vw, 1.25rem);
     line-height: 23px;
     transition: 0.15s ease;
+}
+
+.btn_color_inversion {
+    color: var(--black-color) !important; 
+    background-color: var(--white-color);
+}
+
+.btn_border_2px {
+    border: 2px solid black;
 }
 
 .title {
