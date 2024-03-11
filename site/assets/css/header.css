@@ -10,18 +10,6 @@
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
 }
-
-.current_anchor::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 15%;
-    width: 70%;
-    height: 4px;
-    background-color: var(--black-color);
-    border-top-left-radius: 32px;
-    border-top-right-radius: 32px;
-}
   
 .header__row {
     height: 64px;
@@ -128,10 +116,6 @@
     color: var(--white-color);
 }
 
-.header__list li::first-letter {
-    text-transform: uppercase;
-}
-
 .header__link_black {
     background-color: var(--black-color);
 }
@@ -176,6 +160,17 @@
     transform: translateY(0) rotate(-45deg);
 }
 
+.current_anchor::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 15%;
+    width: 70%;
+    height: 4px;
+    background-color: var(--black-color);
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+}
 
 @media (max-width: 1240px) { 
     
@@ -299,7 +294,7 @@
         top: 0;
     }
 
-    .current_anchor::after {
+    .current_anchor::before {
         content: none;
     }
 }

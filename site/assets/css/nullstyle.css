@@ -10,7 +10,7 @@ input, button, textarea { font-family: inherit; }
 input::-ms-clear { display: none; }
 button { cursor: pointer; }
 button::-moz-focus-inner { padding: 0; border: 0; }
-a, a:visited { text-decoration: none; color: var(--black-color); }
+a, a:visited, a:hover { text-decoration: none !important; color: var(--black-color); }
 a:hover { text-decoration: none; }
 ul li { list-style: none; }
 img { vertical-align: top; }
@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit;}
   --white-color: rgba(255, 255, 255, 1);
   --hover-color: rgba(158, 0, 255, 1);
   --placeholder-color: rgba(119, 119, 119, 1);
+  --warning-color: #FF004C;
 }
   
 html, body {
@@ -38,6 +39,7 @@ html, body {
   color: var(--black-color);
   background-color: var(--bg-color);
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body.no-scroll {

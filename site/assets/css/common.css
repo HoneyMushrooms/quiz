@@ -49,3 +49,9 @@
         background-color: var(--hover-color);
     }    
 }
+
+@media (max-width: 700px) {
+    .title_max-width {
+        max-width: 580px;
+    }
+}

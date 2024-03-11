@@ -1,5 +1,5 @@
 // создаем обертку для элементов бургер меню
-function wrapElementsInDiv() {
+function wrapperBurgerMenu() {
     const headerMenu = document.querySelector('.header__menu');
     const headerContacts = document.querySelector('.header__contacts');
 
@@ -23,37 +23,43 @@ function wrapElementsInDiv() {
     }
 }
 
-wrapElementsInDiv()
-window.addEventListener('resize', wrapElementsInDiv);
+wrapperBurgerMenu()
+window.addEventListener('resize', wrapperBurgerMenu);
 
 const burger = () => {
     if(document.querySelector('header').classList.contains('open')) {
         document.querySelector('header').classList.remove('open');
-        
-        document.body.classList.remove('no-scroll')
-        const scrollY = document.documentElement.style.getPropertyValue('--scroll-position');
-        document.documentElement.style.removeProperty('--scroll-position');
-        window.scrollTo(0, parseInt(scrollY) || '0');
+        if(!document.querySelector('.popup.open')) {
+            unFixedWindow();
+        }
     } else {
         document.querySelector('header').classList.add('open');
-        
-        const scrollY = window.scrollY || document.documentElement.scrollTop;
-        document.documentElement.style.setProperty('--scroll-position', `${scrollY}px`);
-        document.body.classList.add('no-scroll')
+        fixedWindow();
     }
 }
 
-document.querySelectorAll('.header__list a').forEach(link => {
-    link.addEventListener('click', () => {
-        if(document.querySelector('header').classList.contains('open')) {
-            document.querySelector('header').classList.remove('open');
-            
-            document.body.classList.remove('no-scroll')
-            const scrollY = document.documentElement.style.getPropertyValue('--scroll-position');
-            document.documentElement.style.removeProperty('--scroll-position');
-            window.scrollTo(0, parseInt(scrollY) || '0');
-        }
-    });
+function closeHeader(e) {
+    e.preventDefault();
+    if (document.querySelector('header').classList.contains('open')) {
+        document.querySelector('header').classList.remove('open');
+    }
+
+    if(!document.querySelector('.popup.open')) {
+        unFixedWindow();
+    } else if (document.querySelector('.popup.open') && !e.target.classList.contains('popup-link')) {
+        document.querySelector('.popup.open').classList.remove('open');
+        setTimeout(() => {
+            unFixedWindow();
+            const lockPadding = document.querySelectorAll('.lock-padding');
+            lockPadding.forEach(el => el.style.width = '100%');
+            document.querySelector('header').classList.remove('lock-padding');
+        }, 800);
+    }
+}
+
+document.querySelectorAll('.header a').forEach(link => {
+    link.addEventListener('click', closeHeader); 
 });
+
 
 document.getElementById('burger').addEventListener('click', burger);

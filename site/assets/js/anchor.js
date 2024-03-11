@@ -1,20 +1,31 @@
 document.querySelectorAll('[data-goto]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-
+        
         const targetElement = document.querySelector(this.getAttribute('data-goto'));
-    
-        if (targetElement) {
-            window.scroll({
-                top: targetElement.offsetTop - 70,
-                behavior: 'smooth'
-            });
+        
+        if(document.querySelector('.lock-padding')) {
+            setTimeout(() => {
+                if (targetElement) {
+                    window.scroll({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 800)
+        } else {
+
+            if (targetElement) {
+                window.scroll({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
   
-
-window.addEventListener('scroll', function() {
+function setCurrentAnchor() {
     let closestAnchor = null;
     let closestDistance = Infinity;
     
@@ -32,11 +43,14 @@ window.addEventListener('scroll', function() {
         }
     });
 
-    if (closestAnchor) {
+    if (closestAnchor && !document.querySelector('.popup.open')) {
         document.querySelectorAll('[data-goto]').forEach(item => {
             item.classList.remove('current_anchor');
         });
         
         closestAnchor.classList.add('current_anchor');
     }
-});
+}
+
+setCurrentAnchor();
+window.addEventListener('scroll', setCurrentAnchor);

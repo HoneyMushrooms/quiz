@@ -259,7 +259,6 @@
 }
 
 .form {
-    padding: 32px clamp(1rem, 0.5rem + 2vw, 2rem) clamp(1rem, 0.5rem + 2vw, 2rem);
     background-color: var(--white-color);
     border-radius: 32px;
     display: flex;
@@ -269,6 +268,7 @@
 }
 
 .quiz__form {
+    padding: 32px clamp(1rem, 0.5rem + 2vw, 2rem) clamp(1rem, 0.5rem + 2vw, 2rem);
     box-shadow: 0px -20px 0px -15px rgba(233, 196, 255, 1), 0px -34px 0px -24px rgba(240, 217, 255, 1);
 }
 
@@ -304,6 +304,15 @@
     margin-top: -70px;
 }
 
+.swiper-container {
+    transform: none;
+}
+
+.emoji__img {
+    width: clamp(6rem, 5.273rem + 3.64vw, 8rem);
+    height: clamp(6rem, 5.273rem + 3.64vw, 8rem);
+}
+
 @media (hover:hover) {
     .swiper-button-next:hover, 
     .swiper-button-prev:hover {
@@ -335,7 +344,7 @@
 
 @media (min-width: 1440px) { 
     .history__item {
-        border-radius: 8px;
+        border-radius: 16px !important;
     }
 }
 

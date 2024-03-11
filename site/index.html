@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/input.css">
+    <link rel="stylesheet" href="./assets/css/popup.css">
     <link rel="stylesheet" href="./assets/libs/swiper/swiper.min.css">
-
+    
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
@@ -20,7 +22,8 @@
     <script defer src="./assets/js/swiper.js"></script>
     <script defer src="./assets/js/quiz.js"></script>
     <script defer src="./assets/js/anchor.js"></script>
-    <!-- <script defer src="./assets/js/popup.js"></script> -->
+    <script defer src="./assets/js/popup.js"></script>
+    <script defer src="./assets/js/formHandler.js"></script>
     <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -34,22 +37,22 @@
             </button>
             <nav class="header__menu">
                 <ul class="header__list">
-                    <li><a class="header__link" href="#" data-goto=".quiz_description">главная</a></li>
-                    <li><a class="header__link" href="#" data-goto=".quiz">квиз</a></li>
-                    <li><a class="header__link" href="#" data-goto=".comments">отзывы</a></li>
-                    <li><a class="header__link header__link_with_sublist" href="#">не главная</a>
+                    <li><a class="header__link" href="#" data-goto=".quiz_description">Главная</a></li>
+                    <li><a class="header__link" href="#" data-goto=".quiz">Квиз</a></li>
+                    <li><a class="header__link" href="#" data-goto=".comments">Отзывы</a></li>
+                    <li><a class="header__link header__link_with_sublist" href="#">Не главная</a>
                         <ul class="header__sublist">
-                            <li><a class="header__sublink" href="#">подпункт</a></li>
-                            <li><a class="header__sublink" href="#">еще подпункт</a></li>
-                            <li><a class="header__sublink" href="#">и еще один подпункт</a></li>
-                            <li><a class="header__sublink" href="#">и еще один подпункт</a></li>
-                            <li><a class="header__sublink" href="#">и еще один подпункт</a></li>
+                            <li><a class="header__sublink" href="#">Подпункт</a></li>
+                            <li><a class="header__sublink" href="#">Еще подпункт</a></li>
+                            <li><a class="header__sublink" href="#">И еще один подпункт</a></li>
+                            <li><a class="header__sublink" href="#">И еще один подпункт</a></li>
+                            <li><a class="header__sublink" href="#">И еще один подпункт</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
             <div class="header__contacts">
-                <a class="btn header__btn" href="#">Связаться с нами</a>             
+                <a class="btn header__btn popup-link" href="#feedback">Связаться с нами</a>             
                 <div class="header__networks">
                     <a href="#">
                         <img src="./assets/img/favicon/tg.svg" alt="telegram">
@@ -173,28 +176,28 @@
                         </div>
                         <div class="swiper-slide" style="background: url(./assets/img/swiper_bg_3.jpg)">
                             <div class="swaper__column">
-                                <img src="./assets/img/swiper_bg_2.jpg" class="swaper__avatar" alt="avatar">
+                                <img src="./assets/img/avatar_3.png" class="swaper__avatar" alt="avatar">
                                 <div class="swaper__name">Тимур Никитенко</div>
                                 <div class="swaper__comment">Господа, глубокий уровень погружения в значительной степени обусловливает важность глубокомысленных рассуждений.</div>
                             </div>
                         </div>
                         <div class="swiper-slide" style="background: url(./assets/img/swiper_bg_1.jpg)">
                             <div class="swaper__column">
-                                <img src="./assets/img/swiper_bg_2.jpg" class="swaper__avatar" alt="avatar">
+                                <img src="./assets/img/avatar_1.png" class="swaper__avatar" alt="avatar">
                                 <div class="swaper__name">Тимур Никитенко</div>
                                 <div class="swaper__comment">Господа, глубокий уровень погружения в значительной степени обусловливает важность глубокомысленных рассуждений.</div>
                             </div>
                         </div>
                         <div class="swiper-slide" style="background: url(./assets/img/swiper_bg_2.jpg)">
                             <div class="swaper__column">
-                                <img src="./assets/img/swiper_bg_2.jpg" class="swaper__avatar" alt="avatar">
+                                <img src="./assets/img/avatar_2.png" class="swaper__avatar" alt="avatar">
                                 <div class="swaper__name">Тимур Никитенко</div>
                                 <div class="swaper__comment">Господа, глубокий уровень погружения в значительной степени обусловливает важность глубокомысленных рассуждений.</div>
                             </div>
                         </div>
                         <div class="swiper-slide" style="background: url(./assets/img/swiper_bg_3.jpg)">
                             <div class="swaper__column">
-                                <img src="./assets/img/swiper_bg_2.jpg" class="swaper__avatar" alt="avatar">
+                                <img src="./assets/img/avatar_3.png" class="swaper__avatar" alt="avatar">
                                 <div class="swaper__name">Артур Усович</div>
                                 <div class="swaper__comment">Задача организации, в особенности же убеждённость некоторых оппонентов предопределяет высокую востребованность благоприятных перспектив.</div>
                             </div>
@@ -253,5 +256,90 @@
         </div>
     </footer>
 
+    <div id="feedback" class="popup">
+        <div class="popup__body">
+            <div class="popup-container">
+                <form class="form popup__form">
+                    <a href="#" class="popup__close">
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1" y="1" width="54" height="54" rx="15" fill="white"/>
+                            <rect x="1" y="1" width="54" height="54" rx="15" stroke="black" stroke-width="2"/>
+                            <path d="M16 40L40 16M40 40L16 16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    
+                    <h2 class="title title_size_s title_max-width">Заполните контактные данные</h2>
+
+                    <div class="popup__group">
+                        <p class="text popup__text">Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+                        <div class="popup__inputs">
+                            <div class="form__group">
+                                <input type="text" placeholder="" id="name" class="form__input-text popup__input-text"><label for="name" class="form__label_text">Ваше имя</label>
+                            </div>
+                            
+                            <div class="form__group">
+                                <input type="text" placeholder="" id="surname" class="form__input-text popup__input-text"><label for="surname" class="form__label_text">Фамилия</label>
+                            </div>
+                            
+                            <div class="form__group">
+                                <input type="text" placeholder="" id="user_comment" class="form__input-text popup__input-text"><label for="user_comment" class="form__label_text">Комментарий</label>
+                                <div class="upload-file__wrapper">
+                                    <input
+                                        type="file"
+                                        name="files[]"
+                                        id="upload-file__input_1"
+                                        class="upload-file__input"
+                                        accept=".jpg, .png"
+                                        multiple
+                                    >
+                                    <label class="upload-file__label" for="upload-file__input_1">
+                                        <span class="upload-file__text text">Приложить файлы</span>
+                                        <img src="./assets/img/favicon/paperclip2.svg" alt="file_icon">
+                                    </label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="popup__group">
+                        <p class="text popup__text">Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+                        <div class="popup__radio-btns">
+                            <label class="radio__btn"><input type="radio" name="popup-radio"><span>Не знаю</span></label>
+                            <label class="radio__btn"><input type="radio" name="popup-radio" checked><span>Увидел это</span></label>
+                            <label class="radio__btn"><input type="radio" name="popup-radio"><span>Вон то</span></label>
+                            <label class="radio__btn"><input type="radio" name="popup-radio"><span>Вон то</span></label>
+                            <label class="radio__btn"><input type="radio" name="popup-radio"><span>Увидел это</span></label>
+                            <label class="radio__btn"><input type="radio" name="popup-radio"><span>Не знаю</span></label>
+                        </div>
+                    </div>     
+                    
+                    <button type="submit" class="btn popup__btn">Продолжить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup success">
+        <div class="popup__body">
+            <div class="container popup-container">
+                <div class="popup__result">
+                    <a href="#" class="popup__close">
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1" y="1" width="54" height="54" rx="15" fill="white"/>
+                            <rect x="1" y="1" width="54" height="54" rx="15" stroke="black" stroke-width="2"/>
+                            <path d="M16 40L40 16M40 40L16 16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div class="popup__group">
+                        <img class="emoji__img" src="./assets/img/emoji.png" alt="emoji__icon"/>
+                        <h2 class="title title_size_s">Ваши данные Отправлены</h2>
+                        <p class="text">Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+                    </div>
+                    <a href="index.html" class="btn popup__btn">Вернуться на сайт</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

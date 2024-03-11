@@ -5,7 +5,8 @@ const responseData = {
         details: 'Многие из нас хоть раз попадались на эту удочку — хочешь пройти всего один тест из интернета, и вдруг понимаешь, что пролетело полдня.',
         answer: ['На темперамент', 'Кто я из вселенной Марвел', 'Увидел это', 'Мое тотемное животное', 'На IQ', 'На логическое мышление', 'На уровень интеллекта'],
         type: 'checkbox'
-    }, {
+    }, 
+    {
         id: 2,
         question: 'Вы любите проходить тесты?',
         details: 'Нам важно узнать насолько часто Вы проходите тесты.',
@@ -41,7 +42,27 @@ const userAnswers = [];
 function renderQuestion() {
     const questionData = responseData.testData[currentQuestion];
     const testContent = document.querySelector('.quiz__form');
-    
+    if(responseData.testData.length - 1 == currentQuestion) {
+        const emojiWrapper = document.createElement('div');
+        const emoji_1 = document.createElement('img');
+        const emoji_2 = document.createElement('img');
+        emojiWrapper.className = 'emoji-wrapper';
+        emoji_1.className = 'emoji__img';
+        emoji_2.className = 'emoji__img';
+        
+        emoji_2.alt = 'emoji';
+        emoji_2.alt = 'emoji';
+        
+        emoji_1.src = './assets/img/emoji.png';
+        emoji_2.src = './assets/img/emoji_like.png';
+        emojiWrapper.style.display = 'flex';
+        emojiWrapper.append(emoji_1);
+        emojiWrapper.append(emoji_2);
+        testContent.querySelector('.title').before(emojiWrapper);
+    } else {
+        testContent.querySelector('.emoji-wrapper')?.remove();
+    }
+
     testContent.querySelector('.title').innerText = questionData.question;
     testContent.querySelector('.text').innerText = questionData.details;
     
@@ -147,14 +168,16 @@ nextButton.addEventListener('click', function(e) {
     if (responseData.testData[currentQuestion]) {
         renderQuestion();
         renderHistory();
-    } else {
     }
 });
 
 prevButton.addEventListener('click', function(e) {
     e.preventDefault();
     
-    checkSelectedAnswers();
+    const selectedAnswers = checkSelectedAnswers();
+    if(selectedAnswers.length === 0 && document.querySelector(`.history__item_${+currentQuestion + 1}`)) {
+        return;
+    }
     saveSelectedAnswers();
 
     currentQuestion--;
@@ -162,8 +185,6 @@ prevButton.addEventListener('click', function(e) {
     if (responseData.testData[currentQuestion]) {
         renderQuestion();
         renderHistory();
-    } else {
-        
     }
 });
 
@@ -184,8 +205,23 @@ function renderHistory() {
         historyItem.classList.add('history__item');
         historyItem.classList.add(`history__item_${histotyAttribute}`);
         historyColumn.append(historyItem);
+
+        historyItem.addEventListener('click', function(e) {
+            const lastHistoryItem = currentQuestion == document.querySelector('.history__column').lastChild.classList[1].split('_').at(-1);
+            const selectedAnswers = checkSelectedAnswers();
+    
+            if(selectedAnswers.length == 0 && !lastHistoryItem) {
+                return;
+            }
+            
+            saveSelectedAnswers();
+            currentQuestion = e.target.classList[1].split('_').at(-1);
+            renderQuestion();
+            renderHistory();
+        })
     }
 
+    // делаем плашку активной
     document.querySelectorAll(`.history__item`).forEach(item => {
         if(item.classList[1].split('_').at(-1) == currentQuestion) {
             item.classList.add('history__item_active');
@@ -194,22 +230,7 @@ function renderHistory() {
         } 
     })
     
-
-    historyItem.addEventListener('click', function(e) {
-
-        const lastHistoryItem = currentQuestion == document.querySelector('.history__column').lastChild.classList[1].split('_').at(-1);
-        const selectedAnswers = checkSelectedAnswers();
-
-        if(selectedAnswers.length == 0 && !lastHistoryItem) {
-            return;
-        }
-        
-        saveSelectedAnswers();
-        currentQuestion = e.target.classList[1].split('_').at(-1);
-        renderQuestion();
-        renderHistory();
-    })
-  
+    // добавление элементов в плашку
     inputs.forEach(input => {
         input.addEventListener('change', function() {
             const text = this.nextElementSibling.innerText;
@@ -218,18 +239,17 @@ function renderHistory() {
             if(this.type === 'checkbox') {
                 if (this.checked) {
                     const span = document.createElement('span');
-                    span.textContent = `${text}, `;
+                    span.textContent = `${text}`;
                     historyItem.append(span);
                 } else {
                     historySpans.forEach(span => {
-                        if (span.textContent === `${text}, `) {
+                        if (span.textContent === `${text}` || span.textContent === `${text},\u00A0`) {
                             span.remove();
                         }
                     });
                 } 
             } else if (this.type === 'radio') {
                 if (this.checked && this.name != 'select') {
-                    console.log(this, historyItem)
                     historyItem.querySelectorAll('span').forEach(span => {
                         span.remove();
                     });
@@ -239,6 +259,15 @@ function renderHistory() {
                     historyItem.append(span);
                 }
             }
+            historyItem.querySelectorAll('span').forEach((span, index, arr) => {
+                if(!arr[index + 1]) {
+
+                } else {
+                    if(!span.textContent.includes(',\u00A0')) {
+                        span.textContent += ',\u00A0' 
+                    }
+                }
+            })
         });
     });
 }
