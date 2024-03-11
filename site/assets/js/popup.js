@@ -92,8 +92,11 @@ function fixedWindow() {
     const firstAnchor = document.querySelector('[data-goto=".quiz_description"]');
     document.body.classList.add('no-scroll');
     setTimeout(() => {
-        currentAnchor.classList.add('current_anchor');
-        firstAnchor.classList.remove('current_anchor');
+        if(currentAnchor) {
+            currentAnchor.classList.add('current_anchor');
+            firstAnchor.classList.remove('current_anchor');
+        }
+ 
     })
 }
 
