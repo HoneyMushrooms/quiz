@@ -342,9 +342,13 @@
 }
 
 
-@media (min-width: 1440px) { 
+@media (min-width: 1441px) { 
     .history__item {
         border-radius: 16px !important;
+    }
+
+    .swiper {
+        border-radius: 32px;
     }
 }
 
