@@ -60,7 +60,7 @@ function bodyLock() {
     document.querySelector('header').classList.add('lock-padding');
     const lockPadding = document.querySelectorAll('.lock-padding');
 
-    lockPadding.forEach(el => el.style.width = `calc(100% - ${lockPaddingValue})`);
+    lockPadding.forEach(el => el.style.width = `calc(100% - ${lockPaddingValue} - 0.5px)`);
     
     fixedWindow();
 
